@@ -1,0 +1,25 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.4'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.ias.training'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation group: 'com.zaxxer', name: 'HikariCP', version: '5.0.1'
+	implementation group: 'org.postgresql', name: 'postgresql', version: '42.3.3'
+	implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

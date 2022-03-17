@@ -1,0 +1,15 @@
+
+services:
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: postgres_password-
+      POSTGRES_USER: postgres_user
+      POSTGRES_DB: maintenace_db
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8082:8080"
